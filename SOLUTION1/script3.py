@@ -1,3 +1,4 @@
+#Write a python script to enter any number, if it is integer number, then check its palindrom or not. Print appropriate message if it is not palindrome.
 a=int(input("Enter any numbre:"))
 c=a 
 r=0
@@ -10,4 +11,3 @@ if r==c:
     print("number is palindrome")
 else:
     print("number is not palindrome")
-    
