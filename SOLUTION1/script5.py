@@ -1,3 +1,4 @@
+#Write a python script to enter any string and count vowel.
 a=input("enter any string:")
 vowels=0
 for i in a:
