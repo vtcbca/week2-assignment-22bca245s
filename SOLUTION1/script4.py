@@ -1,3 +1,4 @@
+#Write a script to enter any number and check it is armstrong number or not.
 a=int(input("enter any number"))
 sum=0
 temp=a
