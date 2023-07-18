@@ -1,0 +1,77 @@
+1.CREATE TABLE.
+
+	-->create table stud
+ 	   (
+   	     id int primary key,
+             name text
+            );
+
+ 	-->create table stud_details
+  	   (
+             id int REFERENCES stud(id),
+             city text,
+             Mobile_no int
+            );
+
+2. insert 10 records.
+
+	-->insert into stud values(1,'OM'),
+  				(2,'SAI'),
+    				(3,'RAM'),
+  				(4,'RADHA'),
+   				(5,'KRISHNA'),
+  				 (6,'KRISH'),
+				(7,'POOJA'),
+ 				(8,'ANAMIKA'),
+    				(9,'AMIT'),
+   				(10,'SHAGUN') ;
+	select * from stud;
+ 	1|OM
+	2|SAI
+	3|RAM
+	4|RADHA
+	5|KRISHNA
+	6|KRISH
+	7|POOJA
+	8|ANAMIKA
+	9|AMIT
+	10|SHAGUN
+
+	-->insert into stud_details values (1,'Surat',1234567890,
+  				(2,'Bombay',0987654321),
+    				(3,'Surat',1234567891),
+  				(4,'Vapi',3456789021),
+    				(5,'Mumbai',9662534567),
+   				(6,'Delhi',8458867902),
+    				(7,'Kadodra',9876543210),
+   				(8,'Bengal',3456789201),
+   				(9,'Navsari',43526781903),
+ 				(10,'Udhana',9876543210);
+	select * from stud_details;
+	1|Surat|1234567890
+	2|Bombay|987654321
+	3|Surat|1234567891
+	4|Vapi|3456789021
+	5|Mumbai|9662534567
+	6|Delhi|8458867902
+	7|Kadodra|9876543210
+	8|Bengal|3456789201
+	9|Navsari|43526781903
+	10|Udhana|9876543210
+
+3. Display whose student come from the Surat City.
+
+	select s.id,s.name,sd.city,sd.m_no from stud s, stud_details sd
+	where s.id=sd.id and sd.city='surat';
+
+4. Display student details whose city name start with 'b'.
+
+	select s.id,s.name,sd.city,sd.m_no from stud s, stud_details sd
+	where s.id=sd.id and sd.city like 'b%';
+
+5. Update mobileno who are comming from 'Surat'.
+
+	update stud_details set m_no=5356567657
+	where city='surat';
+
+
